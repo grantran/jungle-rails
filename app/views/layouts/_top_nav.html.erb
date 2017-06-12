@@ -26,7 +26,7 @@
           </ul>
         </li>
         <% if !current_user %>
-        <li>
+        <li class="login-button">
           <%= link_to 'Login', :login %>
         </li>
         <li>
@@ -35,9 +35,6 @@
         <% else %>
         <li>
           <%= link_to 'Logout', :logout %>
-        </li>
-        <li>
-          Logged in as: <%= current_user.first_name %>
         </li>
         <% end %>
       </ul>

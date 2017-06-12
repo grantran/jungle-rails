@@ -31,15 +31,44 @@
 
 </section>
 
-<div> 
-            <% @review.each do |item| %>
-<%= item.description %>
-          <% end %>
-
+<div>
 </div>
+
+<div class="panel panel-default items">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Comment</th>
+            <th>Rating</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+        <% @review.each do |item| %>
+          <td>
+          <%= item.description %>
+          </td>
+          <td class = "col-md-1 col-lg-1 col-sm-1 col-xd-1">
+          <%= item.rating %>
+          <span style="float:right"> 
+          <% if current_user && current_user.id == item.user_id %>
+          <%= link_to fa_icon('trash'), [item.product, item], class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: "Are you sure?" } %>
+          <% end %>
+          </span>
+          </td> 
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+
+
+<br>
+<div>
 <% if current_user %>
   <%= form_for([@product, Review.new]) do |form| %>
     <div class="field">
+      <div> Please add a comment and rate this product </div>
       <%= form.text_area :description, id: :product_reviews  %>
       <%= form.select :rating, 1..5, id: :product_reviews %>
     </div>
@@ -48,3 +77,6 @@
     </div>
   <% end %>
 <% end %>
+</div>
+<br>
+<br>

@@ -1,3 +1,8 @@
+<section> 
+<% if current_user %>
+<h3> Logged in as: <%= current_user.first_name %> <%= current_user.last_name %> </h3>
+<% end %>
+</section>
 <section class="products-index">
 
   <header class="page-header">
