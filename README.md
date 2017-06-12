@@ -1,19 +1,14 @@
 # Jungle
 
-A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
+A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example. Features and bugs were added to the initial Jungle skeleton which can be found at here(https://github.com/lighthouse-labs/jungle-rails).
 
+Users can sign-up for an account, and browse products. Products are added to a cart and upon checkout, credit card information is handled via Stripe. An email confirmation is sent to the user as well. 
 
-## Setup
+Using the administrator namespace, products and categories can be added. Upon addition, products are assigned a category and the product page can be filtered by categories (by regular users as well). 
 
-1. Fork & Clone
-2. Run `bundle install` to install dependencies
-3. Create `config/database.yml` by copying `config/database.example.yml`
-4. Create `config/secrets.yml` by copying `config/secrets.example.yml`
-5. Run `bin/rake db:reset` to create, load and seed db
-6. Create .env file based on .env.example
-7. Sign up for a Stripe account
-8. Put Stripe (test) keys into appropriate .env vars
-9. Run `bin/rails s -b 0.0.0.0` to start the server
+![Jungle Home Page]()
+![Jungle Cart Page]()
+
 
 ## Stripe Testing
 
