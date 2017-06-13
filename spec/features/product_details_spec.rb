@@ -20,7 +20,7 @@ RSpec.feature "ProductDetails", type: :feature, js: true do
 
     first(:css, 'img').click
 
-    expect(page).to have_content "Comment"
+    expect(page).to have_css ".product-detail"
 
     save_screenshot 'product_details.png'
   end
